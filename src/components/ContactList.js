@@ -1,6 +1,7 @@
 import React from 'react';
 import { Contact } from './Contact';
 import { connect } from 'react-redux';
+import { filterContacts } from '../redux/selectors';
 
 export const ContactList = ({ contacts }) => {
   return (
@@ -8,18 +9,19 @@ export const ContactList = ({ contacts }) => {
       <h3 className="mt-3">Your Contacts</h3>
       {contacts && contacts.length ? (
         contacts.map((contact) => (
-          <Contact key={connect.id} contact={contact} />
+          <Contact key={contact.id} contact={contact} />
         ))
       ) : (
-        <div className="font-weight-bold"> No contacts added yet! </div>
+        <div className="font-weight-bold"> No contacts! </div>
       )}
     </>
   );
 };
 
 function mapStateToProps(state) {
+  const { searchFilter } = state;
   return {
-    contacts: state.contacts.allContacts,
+    contacts: filterContacts(state, searchFilter),
   };
 }
 

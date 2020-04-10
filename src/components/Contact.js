@@ -5,7 +5,7 @@ export const Contact = ({ contact }) => {
   return (
     <div className="card mb-3">
       <div className="card-body">
-        <h5 className="card-title">{name}</h5>
+        <h5 className="card-title text-capitalize">{name}</h5>
         {number}
       </div>
     </div>

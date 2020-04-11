@@ -15,7 +15,6 @@ export const filterContacts = (store, filter) => {
 export const getContactsByKeyword = createSelector(
   [getContacts, getKeyword],
   (allContacts, filter) => {
-    console.log(filter);
     return allContacts.filter((c) => c.name.toLowerCase().includes(filter));
   }
 );

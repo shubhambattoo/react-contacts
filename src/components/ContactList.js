@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { Contact } from './Contact';
 import { connect } from 'react-redux';
-import { filterContacts } from '../redux/selectors';
+// eslint-disable-next-line
+import { filterContacts, getContactsByKeyword } from '../redux/selectors';
 import { loadContacts } from './../redux/actions/contact';
 
 export const ContactList = ({ contacts, loadContacts }) => {
@@ -25,9 +26,9 @@ export const ContactList = ({ contacts, loadContacts }) => {
 
 function mapStateToProps(state) {
   // console.log(state);
-  const { searchFilter } = state;
+  // const { searchFilter } = state;
   return {
-    contacts: filterContacts(state, searchFilter),
+    contacts: getContactsByKeyword(state),
   };
 }
 

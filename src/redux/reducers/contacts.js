@@ -8,6 +8,7 @@ import {
 const initialState = {
   allContacts: [],
   error: null,
+  searchFilter: ''
 };
 
 export default function (state = initialState, action) {
@@ -39,6 +40,8 @@ export default function (state = initialState, action) {
         ...state,
         error: action.payload,
       };
+    case 'SET_FILTER':
+      return { ...state, searchFilter: action.payload };
     default:
       return state;
   }

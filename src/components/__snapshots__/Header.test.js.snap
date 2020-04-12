@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderComponent snapshot renders 1`] = `
+<header>
+  <nav
+    className="navbar navbar-expand-lg navbar-light bg-light"
+  >
+    <a
+      className="navbar-brand"
+      href="/"
+    >
+      Contacts App
+    </a>
+    <form
+      className="form-inline ml-auto my-2 my-lg-0"
+      onSubmit={[Function]}
+    >
+      <input
+        aria-label="Search"
+        className="form-control mr-sm-2"
+        onChange={[Function]}
+        placeholder="Search"
+        type="search"
+        value=""
+      />
+      <button
+        className="btn btn-outline-success my-2 my-sm-0"
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+  </nav>
+</header>
+`;

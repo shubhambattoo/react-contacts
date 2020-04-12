@@ -4,11 +4,17 @@ import { connect } from 'react-redux';
 // eslint-disable-next-line
 import { filterContacts, getContactsByKeyword } from '../redux/selectors';
 import { loadContacts } from './../redux/actions/contact';
+import { FixedSizeList as List } from 'react-window';
+import InfiniteLoader from 'react-window-infinite-loader';
 
 export const ContactList = ({ contacts, loadContacts }) => {
   useEffect(() => {
     loadContacts();
   }, [loadContacts]);
+
+  const contactsRows = contacts.map((contact) => (
+    <Contact key={contact.id} contact={contact} />
+  ));
 
   return (
     <>

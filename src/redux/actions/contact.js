@@ -18,7 +18,7 @@ export const addContact = (content) => {
 
 export const loadContacts = () => (dispatch) => {
   axios
-    .get('http://localhost:3000/users')
+    .get('http://localhost:3000/users?_sort=name&_order=asc')
     .then((res) => {
       dispatch(loadContactSuccess(res.data));
     })

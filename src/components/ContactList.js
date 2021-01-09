@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 // eslint-disable-next-line
 import { filterContacts, getContactsByKeyword } from '../redux/selectors';
 import { loadContacts } from './../redux/actions/contact';
-import { FixedSizeList as List } from 'react-window';
-import InfiniteLoader from 'react-window-infinite-loader';
 
 export const ContactList = ({ contacts, loadContacts }) => {
   useEffect(() => {
@@ -17,16 +15,15 @@ export const ContactList = ({ contacts, loadContacts }) => {
   ));
 
   return (
-    <>
+    <div style={{ height: '550px', overflowY: 'auto' }}>
       <h3 className="mt-3">Your Contacts</h3>
+
       {contacts && contacts.length ? (
-        contacts.map((contact) => (
-          <Contact key={contact.id} contact={contact} />
-        ))
+        contactsRows
       ) : (
         <div className="font-weight-bold"> No contacts! </div>
       )}
-    </>
+    </div>
   );
 };
 

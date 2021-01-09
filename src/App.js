@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import './App.css';
 // import Header from './components/Header';
 // import AddContact from './components/AddContact';

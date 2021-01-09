@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Contact } from './Contact';
 import { connect } from 'react-redux';
 // eslint-disable-next-line
